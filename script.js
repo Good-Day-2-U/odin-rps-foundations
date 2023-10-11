@@ -14,12 +14,12 @@ let ai = function() {
   } else {
     return "ERROR"
   }
-}
+};
 
 // let aiOutcome = ai()
 
 
-let playerInput = prompt("Please choose Rock, Paper or Scissors please")
+// let playerInput = prompt("Please choose Rock, Paper or Scissors please")
 
 // const playerInput = "rock"
 
@@ -41,28 +41,43 @@ let game = function(a, b) {
   } else {
     return "ERROR"
   }
-}
+};
 
-let gameOutput
+let gameOutput;
 
-let aiOutcome = ai()
+let aiOutcome = ai();
 
 
-const rounds = 5
 
-for (let i = 0; i < rounds; i++) {
+
+
+
+
+
+
+
+
+
+
+const rounds = 1;
+
+let playGame = function playRound() {
   
-  let aiOutcome = ai()
+  for (let i = 0; i < rounds; i++) {
+  
+    let aiOutcome = ai()
 
-  gameOutput = game(aiOutcome, playerInput)
+    gameOutput = game(aiOutcome, playerInput)
 
-  console.log(aiOutcome)
+    console.log(aiOutcome)
 
-  console.log(playerInput)
+    console.log(playerInput)
 
-  console.log(gameOutput)
+    console.log(gameOutput)
+  }
+};
 
-}
+
 
 
 // A
