@@ -47,9 +47,7 @@ let gameOutput;
 
 let aiOutcome = ai();
 
-
-
-
+let playerInput;
 
 
 
@@ -61,17 +59,17 @@ let aiOutcome = ai();
 
 const rounds = 1;
 
-let playGame = function playRound() {
+let playGame = function playRound(a) {
   
   for (let i = 0; i < rounds; i++) {
   
     let aiOutcome = ai()
-
-    gameOutput = game(aiOutcome, playerInput)
+    let playerCoice = a
+    gameOutput = game(aiOutcome, a)
 
     console.log(aiOutcome)
 
-    console.log(playerInput)
+    console.log(playerCoice)
 
     console.log(gameOutput)
   }
