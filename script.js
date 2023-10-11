@@ -44,6 +44,16 @@ let ai = function() {
 // };
 
 let rBox = document.querySelector('#resultBox')
+let playerBox = document.querySelector('.playerBox')
+let computerBox = document.querySelector('.computerBox')
+
+
+// Score
+let pScoreBox = document.querySelector("#playerScore")
+let cScoreBox = document.querySelector("#computerScore")
+
+let pScore = 0
+let cScore = 0
 
 let game = function(a, b) {
   if (a === b) {
@@ -63,6 +73,15 @@ let game = function(a, b) {
   } else {
     rBox.textContent = "ERROR"
   }
+  let temp = rBox.textContent
+  rBox.textContent = "Result : " + temp
+  if (temp.charAt(4) === "W"){
+    pScore = pScore + 1
+  } else if (temp.charAt(4) === "L"){
+    cScore = cScore + 1
+  } else {
+    return
+  }
 };
 
 let gameOutput;
@@ -73,6 +92,7 @@ let playerInput;
 
 const rounds = 1;
 
+let winMessage = document.querySelector("#winBox")
 
 
 
@@ -87,18 +107,31 @@ let playGame = function playRound(a) {
 
 
 
-
-
-
-
-
-
-
   console.log(aiOutcome)
-
+  computerBox.textContent = "Computer : " + aiOutcome.toUpperCase()
   console.log(playerCoice)
+  playerBox.textContent = "Human : " + playerCoice.toUpperCase()
 
-  console.log(gameOutput)
+  // The Result
+  console.log(rBox.textContent)
+
+
+  console.log(pScore)
+  pScoreBox.textContent = "Human : " + pScore
+  console.log(cScore)
+  cScoreBox.textContent = "Computer : " + cScore
+
+  if (pScore >= 5) {
+    winMessage.textContent = "YOU WIN!!!"
+    cScore = 0
+    pScore = 0
+  } else if (cScore >= 5) {
+    winMessage.textContent = "YOU LOSE :("
+    cScore = 0
+    pScore = 0
+  } else {
+    winMessage.textContent = "First to Five Wins!"
+  }
     
   
 };
